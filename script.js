@@ -17,6 +17,7 @@ screen.addEventListener("mousedown", mouseDownEvent);
 screen.addEventListener("mousemove", mouseMoveEvent);
 screen.addEventListener("mouseup", mouseUpEvent);
 document.querySelector('.clear').addEventListener('click', clearScreen)
+document.querySelector('.save').addEventListener('click', saveScreen)
 
 //Functions
 
@@ -75,3 +76,18 @@ function clearScreen(){
     ctx.setTransform(1,0,0,1,0,0)
     ctx.clearRect(0,0,ctx.canvas.width, ctx.canvas.height)
 }
+
+function saveScreen(event){
+
+    const link = document.createElement('a');
+
+    link.download = 'download';
+    link.href = screen.toDataURL('image/jpeg', 1.0); 
+    link.click();
+    link.delete;
+}
+
+// Em "link.href = screen.toDataURL('image/jpeg', 1.0);", o segundo parâmetro define a qualidade da imagem, variando de 0 a 1 e caso o valor que foi passado não esteja entre 0 e 1, um valor padrão é 0.92 assumido.
+
+
+// Em "link.href = screen.toDataURL('image/jpeg', 1.0);", o primeiro parâmetro define o tipo de dado e a extensão.

@@ -46,3 +46,13 @@ h1 {
     margin-top: 20px;
     cursor: pointer;
 }
+
+
+.save {
+    border: 1px solid #000;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #FFF;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
